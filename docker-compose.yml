@@ -1,0 +1,67 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: my-postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: suatadmin
+      POSTGRES_DB: products
+      POSTGRES_HOST: my-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmqV2
+    ports:
+      - "5672:5672"   # RabbitMQ mesajlaşma portu
+      - "15672:15672" # RabbitMQ Management UI portu
+    environment:
+      RABBITMQ_DEFAULT_USER: guest   # Varsayılan kullanıcı adı
+      RABBITMQ_DEFAULT_PASS: guest   # Varsayılan şifre
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - mynetwork
+
+  industryxproductservice:
+    image: industryxproductservice
+    build:
+      context: .
+      dockerfile: IndustryX.ProductService/Dockerfile
+    ports:
+      - 5213:5213
+    networks:
+      - mynetwork
+
+  industryxstockservice:
+    image: industryxstockservice
+    build:
+      context: .
+      dockerfile: IndustryX.StockService/Dockerfile
+    ports:
+      - 5214:5214
+    networks:
+      - mynetwork
+
+  industryxslogisticsservice:
+    image: industryxslogisticsservice
+    build:
+      context: .
+      dockerfile: IndustryX.LogisticsService/Dockerfile
+    ports:
+      - 5215:5215
+    networks:
+      - mynetwork
+
+volumes:
+  postgres-data:
+  rabbitmq_data:
+
+networks:
+  mynetwork:
+    driver: bridge

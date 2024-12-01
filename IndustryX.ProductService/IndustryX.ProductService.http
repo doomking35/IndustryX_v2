@@ -1,0 +1,6 @@
+@IndustryX.ProductService_HostAddress = http://localhost:5213
+
+GET {{IndustryX.ProductService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
