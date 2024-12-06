@@ -34,4 +34,13 @@ public class ShipmentController(ILogger<ShipmentController> logger, ShipmentServ
             if (shipmentDto is null) throw new Exception($"GetShipmentWithShipmentID method failed for {shipmentId}");
             return Ok(shipmentDto);
     }
+
+    [HttpPost("AddShipment")]
+    public async Task<IActionResult> AddShipment([FromBody] List<Shipment> shipmentList)
+    {
+        logger.LogInformation("AddShipment method called");
+        if (!shipmentList.Any()) throw new Exception("AddShipment requires at least one shipment");
+        var shipmentDto = await shipmentService.AddShipment(shipmentList);
+        return Ok(shipmentDto);
+    }
 }

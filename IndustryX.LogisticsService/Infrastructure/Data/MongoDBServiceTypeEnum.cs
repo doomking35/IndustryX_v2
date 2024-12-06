@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace IndustryX.LogisticsService.Infrastructure.Data;
 
-public enum MongoDBServiceTypeEnum
+public enum MongoDbServiceTypeEnum
 {
     [Description("ShipmentService")]
     Shipment,

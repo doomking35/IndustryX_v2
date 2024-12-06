@@ -1,8 +1,8 @@
 namespace IndustryX.LogisticsService.Infrastructure.DAL;
 
-public class MongoDBSettings<T> where T : System.Enum
+public class MongoDbSettings<T> where T : System.Enum
 {
-    public string ConnectionURI { get; set; }
-    public string DatabaseName { get; set; }
-    public string CollectionName { get; set; }
+    public string ConnectionUri { get; set; } = string.Empty;
+    public string DatabaseName { get; set; } = string.Empty;
+    public string CollectionName { get; set; } = string.Empty;
 }

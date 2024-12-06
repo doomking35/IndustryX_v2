@@ -9,3 +9,4 @@ C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.Encr
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.EncryptorX\obj\Debug\net9.0\refint\IndustryX.EncryptorX.dll
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.EncryptorX\obj\Debug\net9.0\IndustryX.EncryptorX.pdb
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.EncryptorX\obj\Debug\net9.0\ref\IndustryX.EncryptorX.dll
+C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.EncryptorX\obj\Debug\net9.0\IndustryX.EncryptorX.sourcelink.json

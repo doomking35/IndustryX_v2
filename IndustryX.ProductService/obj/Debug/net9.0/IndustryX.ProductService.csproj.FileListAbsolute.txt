@@ -120,3 +120,4 @@ C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.Prod
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.ProductService\obj\Debug\net9.0\IndustryX.ProductService.pdb
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.ProductService\obj\Debug\net9.0\IndustryX.ProductService.genruntimeconfig.cache
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.ProductService\obj\Debug\net9.0\ref\IndustryX.ProductService.dll
+C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.ProductService\obj\Debug\net9.0\IndustryX.ProductService.sourcelink.json

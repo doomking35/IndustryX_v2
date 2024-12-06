@@ -6,20 +6,31 @@ using IndustryX.LogisticsService.Core.Entities.Records;
 
 namespace IndustryX.LogisticsService.Services;
 
-public class ShipmentService(Shipment shipment, ILogger<ShipmentService> logger)
+public class ShipmentService
 {
-    public ShipmentService(ILogger<ShipmentService> logger) : this(new Shipment()
+    private readonly Shipment _shipment;
+    private readonly ILogger<ShipmentService> _logger;
+    private List<Shipment> ShipmentList = [];
+    public ShipmentService(Shipment shipment, ILogger<ShipmentService> logger)
     {
-        CustomerInfo = new CustomerInfo(),
-        ShipmentAddress = new ShipmentAddress(Int32.MaxValue),
-        ShipmentDescription = "", ShipmentId = Int32.MaxValue
-    }, logger)
+        _shipment = shipment ?? throw new ArgumentNullException(nameof(shipment));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+
+        ShipmentList.Add(shipment);
+        _logger.LogInformation($"Shipment with id: {_shipment.ShipmentId} is initialized.");
+    }
+    public ShipmentService(ILogger<ShipmentService> logger) : this(
+        new Shipment
+        {
+            CustomerInfo = new CustomerInfo(),
+            ShipmentAddress = new ShipmentAddress(Int32.MaxValue),
+            ShipmentDescription = "",
+            ShipmentId = Int32.MaxValue
+        },
+        logger)
     {
         FillShipments();
     }
-    
-    public readonly List<Shipment> ShipmentList = [];
-
     public IEnumerable<ShipmentDto> GetAllShipments()
     {
         return ShipmentList.Select(x => new ShipmentDto()
@@ -29,8 +40,7 @@ public class ShipmentService(Shipment shipment, ILogger<ShipmentService> logger)
     }
     public async Task<ShipmentDto> GetShipmentWithCustomerInfo(CustomerInfo customerInfo)
     {
-        logger.LogInformation("GetShipmentWithCustomerInfo method called");
-        var testShipment = ShipmentList.FirstOrDefault();
+        var testShipment = ShipmentList.First();
         testShipment.CustomerInfo = customerInfo;
         
         return await Task.FromResult(new ShipmentDto()
@@ -55,6 +65,23 @@ public class ShipmentService(Shipment shipment, ILogger<ShipmentService> logger)
             ShipmentAddress = shipment.ShipmentAddress,
             ShipmentDescription = shipment.ShipmentDescription
         });
+    }
+
+    public async Task<List<ShipmentDto>> AddShipment(List<Shipment> shipments)
+    {
+        var lastShipmentId = ShipmentList.LastOrDefault()?.ShipmentId ?? 0;
+        foreach (var shipment in shipments)
+        {
+            shipment.ShipmentId = ++lastShipmentId;
+            ShipmentList.Add(shipment);
+        }
+        return await Task.FromResult(
+            shipments.Select(x => new ShipmentDto()
+            {
+                ShipmentId = x.ShipmentId,
+                ShipmentAddress = x.ShipmentAddress,
+                ShipmentDescription = x.ShipmentDescription
+            }).ToList());
     }
 
     #region Private Section

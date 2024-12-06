@@ -32,3 +32,4 @@ C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.Logi
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.LogisticsService\obj\Debug\net9.0\IndustryX.LogisticsService.pdb
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.LogisticsService\obj\Debug\net9.0\IndustryX.LogisticsService.genruntimeconfig.cache
 C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.LogisticsService\obj\Debug\net9.0\ref\IndustryX.LogisticsService.dll
+C:\Users\suat.alkan.UNIVERA\source\repos\IndustryX.MicroServiceV2\IndustryX.LogisticsService\obj\Debug\net9.0\IndustryX.LogisticsService.sourcelink.json
