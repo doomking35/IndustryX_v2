@@ -1,0 +1,36 @@
+# .NET
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files (if you're building for Windows)
+*.pdb
+*.exe
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET
+# https://docs.microsoft.com/en-us/aspnet/core/fundamentals/web-servers/standalone?view=aspnetcore-5.0#folder-structure
+wwwroot/
+
+# JetBrains Rider
+.idea/
+
+# User-specific files for Visual Studio for Mac
+.vscode/
+
+# .NET Core-specific
+dotnet-restore.log
