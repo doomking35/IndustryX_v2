@@ -9,6 +9,7 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 *.userprefs
+*.csproj.user
 
 # .NET Core
 project.lock.json
